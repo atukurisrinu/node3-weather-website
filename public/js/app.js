@@ -44,10 +44,10 @@ weatherform.addEventListener('submit',(e)=>{
         }
         else
         {
-            messageOne.textContent = data.temparature
-            messageTwo.textContent = data.feelsLike
-        console.log(data.temparature)
-        console.log(data.feelsLike)
+            messageOne.textContent = data.location
+            messageTwo.textContent = data.forecast
+        console.log(data.location)
+        console.log(data.forecast)
       
         }
     })

@@ -17,7 +17,10 @@ const forcast = (latitude,longitude, callback)=>{
         }
         else
         {
-            callback(undefined,{temparature: response.body.current.temperature,feelsLike:response.body.current.feelslike})
+            //callback(undefined,{temparature: response.body.current.temperature,feelsLike:response.body.current.feelslike})
+            callback(undefined,response.body.current.weather_descriptions[0] + " . It is curently " + response.body.current.temperature + " degrees out.It feels like  "+
+            response.body.current.feelslike + " degrees out. The humidity is "+ response.body.current.humidity + "%"
+            )
         }
     })
 }

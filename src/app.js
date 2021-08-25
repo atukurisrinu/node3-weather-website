@@ -55,23 +55,27 @@ app.get('/weather', (req,res)=>{
 
     }
 
-    geocode(req.query.address,(err,{latitude,longitude}={})=>{
+    geocode(req.query.address,(err,{latitude,longitude,location}={})=>{
 
         if(err)
         {
             return res.send({err:'failed to get coordinates for the provided - address '+req.query.address + ' with the error '+err})
         }
 
-        forecast(latitude,longitude,(err,{temparature,feelsLike}={})=>{
+        forecast(latitude,longitude,(err,forecastData)=>{
 
             if(err)
             {
                 return res.send({error:'failed to get weather forcast for provided  latitude :' + latitude + ' longitude : ' + longitude+ 'with the error '+err})
             }
 
-      
-          res.send({ temparature: 'temparature : ' + temparature +'F' , feelsLike: ' feels like : '+feelsLike +'F'})
-
+          
+            console.log(forecastData)
+            res.send({
+                forecast: forecastData,
+                location,
+                address: req.query.address
+            })
         })
 
     })
