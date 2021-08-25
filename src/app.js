@@ -75,8 +75,8 @@ app.get('/weather', (req,res)=>{
 
     })
  
-   // res.send({location:'India',forecast:'32F'})
-})
+   // res.send({location:'India',forecast:'33F'})
+}) 
 
 app.get('/products',(req,res)=>{
 
