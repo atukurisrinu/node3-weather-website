@@ -70,7 +70,7 @@ app.get('/weather', (req,res)=>{
             }
 
       
-          res.send({ temparature: 'temparature : ' + temparature , feelsLike: ' feels like : '+feelsLike })
+          res.send({ temparature: 'temparature : ' + temparature +'F' , feelsLike: ' feels like : '+feelsLike +'F'})
 
         })
 
