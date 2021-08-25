@@ -66,11 +66,11 @@ app.get('/weather', (req,res)=>{
 
             if(err)
             {
-                return res.send({error:'failed to get weather forcast for provided { latitude - ' + latitude + 'longitude- }' + longitude+ 'with the error '+err})
+                return res.send({error:'failed to get weather forcast for provided  latitude :' + latitude + ' longitude : ' + longitude+ 'with the error '+err})
             }
 
       
-          res.send({ temparature: 'temparature - ' + temparature , feelsLike: ' feels like - '+feelsLike })
+          res.send({ temparature: 'temparature : ' + temparature , feelsLike: ' feels like : '+feelsLike })
 
         })
 
